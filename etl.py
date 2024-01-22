@@ -99,7 +99,6 @@ if __name__ == "__main__":
     target_word="chillies"
     df_filtered=filter_dataframe_by_word(df,col_name, target_word)
     df_difficulty=add_difficulty(df_filtered)
-    print(df_difficulty)
-
+    
 
 
