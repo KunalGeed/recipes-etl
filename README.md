@@ -50,7 +50,7 @@ This Python script, `etl.py`, is designed to perform ETL (Extract, Transform, Lo
 
 7. View the output:
 
-    The resulting CSV file, `output_file.csv`, will be generated in the same directory.
+    The resulting CSV file, `test_output.csv`, will be generated in the same directory.
 
 ## Instructions
 
