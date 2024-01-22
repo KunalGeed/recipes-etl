@@ -52,4 +52,4 @@ if __name__ == "__main__":
     df_difficulty = add_difficulty(df_filtered)
 
     # Saving the resulting DataFrame to an output CSV file.
-    df_difficulty.to_csv('output_file.csv', index=False, mode='w')
+    df_difficulty.to_csv('test_file.csv', index=False, mode='w')
