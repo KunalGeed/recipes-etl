@@ -7,7 +7,7 @@ This Python script, `etl.py`, is designed to perform ETL (Extract, Transform, Lo
 
 ## Prerequisites
 
-- Python 3.x (specifically 3.10.5)
+- Python 3.10.x (specifically 3.10.5)
 - Required Python packages are listed in `requirements.txt`. Install them using:
 
     ```
@@ -46,6 +46,7 @@ This Python script, `etl.py`, is designed to perform ETL (Extract, Transform, Lo
     ```
     pip install -r requirements.txt
     ```
+  pywin32 package might give an error to mac users. In that case please remove that package from requirements.txt and try again.
 
 
 7. View the output:
