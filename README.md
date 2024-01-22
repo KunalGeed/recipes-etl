@@ -35,6 +35,12 @@ This Python script, `etl.py`, is designed to perform ETL (Extract, Transform, Lo
      py -m venv venv
      ```
      (or equivalent command on your device).
+
+     Please also activate the virtual enviroment you create. This can be done using the command
+     ```bash
+     venv/Scripts/Activate.ps1
+     ```
+
 4. Install all the required packages as stated in `requirements.txt`. Install them using:
 
     ```
