@@ -1,8 +1,9 @@
-from filter_dataset import *
-from find_difficulty import *
 import pandas as pd
-pd.options.mode.chained_assignment = None  # default='warn'
+from filter_dataset import filter_dataframe_by_word
+from find_difficulty import add_difficulty
 
+# Disable the warning for chained assignments
+pd.options.mode.chained_assignment = None
 
 def read_dataset(filepath, lines=True):
     """
@@ -36,17 +37,19 @@ def read_dataset(filepath, lines=True):
     except Exception as e:
         print(f"An error occurred while reading the dataset: {e}")
         return None
-    
+
 if __name__ == "__main__":
-    #Loading recipies.json file as a Pandas DataFrame.
-    filepath="dataset/recipes.json"
-    df=read_dataset(filepath)
-    col_name="ingredients"
-    target_word="chillies"
-    df_filtered=filter_dataframe_by_word(df,col_name, target_word)
-    df_difficulty=add_difficulty(df_filtered)
+    # Loading recipes.json file as a Pandas DataFrame.
+    filepath = "dataset/recipes.json"
+    df = read_dataset(filepath)
+
+    # Filtering DataFrame based on the 'ingredients' column and the target word 'chillies'.
+    col_name = "ingredients"
+    target_word = "chillies"
+    df_filtered = filter_dataframe_by_word(df, col_name, target_word)
+
+    # Adding a 'difficulty' column to the filtered DataFrame.
+    df_difficulty = add_difficulty(df_filtered)
+
+    # Saving the resulting DataFrame to an output CSV file.
     df_difficulty.to_csv('output_file.csv', index=False)
-
-    
-
-
