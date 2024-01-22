@@ -1,7 +1,7 @@
 import numpy as np
 from fuzzywuzzy import fuzz
 import pandas as pd
-
+import re
 def has_target_word_single(string, target_word):
     """
     Check if the string contains a target word with fuzzy matching.
@@ -14,6 +14,8 @@ def has_target_word_single(string, target_word):
     - bool: True if a similar word is found, False otherwise.
     """
     # Split the string into lines and then into tokens
+    punctuation_pattern = re.compile('[,\.!?\-:;"]')
+    string = re.sub(punctuation_pattern, ' ', string)
     split_strings = string.split("\n")
     tokens = [token for string in split_strings for token in string.split()]
     
@@ -32,6 +34,8 @@ def has_target_word_multiple(string, target_word):
     - bool: True if a similar string of words is found, False otherwise.
     """
     # Split the string into lines
+    punctuation_pattern = re.compile('[,\.!?\-:;"]')
+    string = re.sub(punctuation_pattern, ' ', string)
     tokens = string.split("\n")
     # Check if any line has a fuzzy match with the target word
     return np.any(np.vectorize(lambda x: fuzz.ratio(target_word.lower(), x.lower()) >= 80)(tokens))

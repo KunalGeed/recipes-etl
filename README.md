@@ -66,7 +66,7 @@ This Python script, `etl.py`, is designed to perform ETL (Extract, Transform, Lo
     - Please note that if you already have an existing `test_output.csv` file in the folder, then it is possible of it raising a permission denied error. Please rename the csv and run the code to generate a new one.
 
 3. **Output:**
-    - The script will create a CSV file, `test_output.csv`, containing the filtered and processed recipes. The version generated on my local machine is in `output_file.csv.
+    - The script will create a CSV file, `test_output.csv`, containing the filtered and processed recipes. The version generated on my local machine is in `local_output.csv.`
 `
 4. **Requirements:**
     - Ensure that the required Python packages are installed using the `pip install -r requirements.txt` command.
