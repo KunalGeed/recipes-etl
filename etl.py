@@ -45,11 +45,11 @@ if __name__ == "__main__":
 
     # Filtering DataFrame based on the 'ingredients' column and the target word 'chillies'.
     col_name = "ingredients"
-    target_word = "chillies"
+    target_word = "Chilies"
     df_filtered = filter_dataframe_by_word(df, col_name, target_word)
 
     # Adding a 'difficulty' column to the filtered DataFrame.
     df_difficulty = add_difficulty(df_filtered)
 
     # Saving the resulting DataFrame to an output CSV file.
-    df_difficulty.to_csv('output_file.csv', index=False)
+    df_difficulty.to_csv('output_file.csv', index=False, mode='w')
