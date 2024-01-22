@@ -76,6 +76,9 @@ def add_difficulty(df):
     Returns:
     - pd.DataFrame: DataFrame with an added 'difficulty' column.
     """
+    # Check if the DataFrame is empty
+    if df.empty:
+        return df  # Return the empty DataFrame
     # Add 'difficulty' column using determine_difficulty function
     df['difficulty'] = df.apply(lambda row: determine_difficulty(row['cookTime'], row['prepTime']), axis=1)
     return df
