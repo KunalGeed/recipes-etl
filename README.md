@@ -63,6 +63,7 @@ This Python script, `etl.py`, is designed to perform ETL (Extract, Transform, Lo
     - You can open the file in your code editor and run the file that way, incase terminal in not working for you.
     - This will execute the script, extract recipes with "Chilies" as an ingredient, determine difficulty, and save the resulting dataset as `test_output.csv`. 
     - If you want to search for a different ingredient, please open etl.py. On line 48 you can edit the variable `target_word` to whatever you want.
+    - Please note that if you already have an existing `test_output.csv` file in the folder, then it is possible of it raising a permission denied error. Please rename the csv and run the code to generate a new one.
 
 3. **Output:**
     - The script will create a CSV file, `test_output.csv`, containing the filtered and processed recipes. The version generated on my local machine is in `output_file.csv.
