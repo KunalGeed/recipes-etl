@@ -1,8 +1,8 @@
 import pandas as pd
 
-def read_dataset(filepath):
+def read_dataset(filepath, lines=True):
     """
-    Read the dataset from the specified file path.
+    Read the dataset from the specified file path. Added support for CSV.
 
     Parameters:
     - filepath (str): The path to the dataset file.
@@ -16,7 +16,7 @@ def read_dataset(filepath):
 
         # Check the file type and use the appropriate loading function
         if file_extension == 'json':
-            df = pd.read_json(filepath)
+            df = pd.read_json(filepath, lines=True)
         elif file_extension in ['csv', 'txt']:
             df = pd.read_csv(filepath)
         else:
@@ -27,7 +27,7 @@ def read_dataset(filepath):
         print(f"Error: File not found at {filepath}")
         return None
     except ValueError as ve:
-        print(ve)
+        print("Value Error", ve)
         return None
     except Exception as e:
         print(f"An error occurred while reading the dataset: {e}")
