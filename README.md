@@ -34,7 +34,7 @@ This Python script, `etl.py`, is designed to perform ETL (Extract, Transform, Lo
      ```bash
      py -m venv venv
      ```
-     (or equivalent command on your device).
+     (or equivalent command on your device to create a local virtual environment).
 
      Please also activate the virtual enviroment you create. This can be done using the command
      ```bash
@@ -49,10 +49,6 @@ This Python script, `etl.py`, is designed to perform ETL (Extract, Transform, Lo
   pywin32 package might give an error to mac users. In that case please remove that package from requirements.txt and try again.
 
 
-7. View the output:
-
-    The resulting CSV file, `test_output.csv`, will be generated in the same directory.
-
 ## Instructions
 
 1. **Dataset Download:**
@@ -60,7 +56,10 @@ This Python script, `etl.py`, is designed to perform ETL (Extract, Transform, Lo
 
 2. **Script Execution:**
     - The main script is `etl.py`. Open a terminal and navigate to the `recipes-etl` directory.
-    - Run the script using the command `python etl.py`. 
+    - Run the script using the command:
+    ```
+    python etl.py
+    ``` 
     - You can open the file in your code editor and run the file that way, incase terminal in not working for you.
     - This will execute the script, extract recipes with "Chilies" as an ingredient, determine difficulty, and save the resulting dataset as `test_output.csv`. 
     - If you want to search for a different ingredient, please open etl.py. On line 48 you can edit the variable `target_word` to whatever you want.
@@ -73,7 +72,7 @@ This Python script, `etl.py`, is designed to perform ETL (Extract, Transform, Lo
     - Ensure that the required Python packages are installed using the `pip install -r requirements.txt` command.
 
 5. **Python Version:**
-    - The script is designed to work with Python 3.x. (Specifically Python 3.10.5)
+    - The script is designed to work with Python 3.10.x (Specifically Python 3.10.5)
 
 ## Dependencies
 
