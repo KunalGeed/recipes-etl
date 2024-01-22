@@ -18,7 +18,7 @@ def has_target_word_single(string, target_word):
     tokens = [token for string in split_strings for token in string.split()]
     
     # Check if any token has a fuzzy match with the target word
-    return np.any(np.vectorize(lambda x: fuzz.ratio(target_word, x.lower()) >= 80)(tokens))
+    return np.any(np.vectorize(lambda x: fuzz.ratio(target_word.lower(), x.lower()) >= 80)(tokens))
 
 def has_target_word_multiple(string, target_word):
     """
@@ -34,7 +34,7 @@ def has_target_word_multiple(string, target_word):
     # Split the string into lines
     tokens = string.split("\n")
     # Check if any line has a fuzzy match with the target word
-    return np.any(np.vectorize(lambda x: fuzz.ratio(target_word, x.lower()) >= 80)(tokens))
+    return np.any(np.vectorize(lambda x: fuzz.ratio(target_word.lower(), x.lower()) >= 80)(tokens))
 
 def filter_dataframe_by_word(df, column_name: str, target_word: str):
     """
